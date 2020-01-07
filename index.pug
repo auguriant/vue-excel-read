@@ -1,0 +1,28 @@
+#app
+  .container-responsive
+    .row.bg-primary
+      .col-md-12
+        h4 Webpage is created with HTML5 Drag and Drop , Excel file , xlsx.full.js , Vue.js 
+    .row
+      .col-md-12
+        h5 How to use:
+        ol
+          li Create Excel file with data...
+          li Drag Excel file to drop zone
+          li ?
+          li View your Excel file in your client side only website.
+    .row
+      .col-md-12
+        #drop(@drop="handleDrop",@dragover="handleDragover",@dragenter="handleDragover") Drop Here
+    .row
+      .col-md-12
+        table.table.table-striped.table-hover.table-condensed.table-responsive
+          thead
+            tr
+              th(v-for="item in headers") {{item}}
+          tbody
+            tr(v-for="item in tickets")
+              td(v-for="key in item")
+                label {{key}}
+                p {{item.key}}
+          tfoot
